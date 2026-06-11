@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pluto"
+version = "0.1.0"
+description = "A Claude-Code-only CLI that turns any project into a queryable knowledge graph."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+authors = [{ name = "Pluto Contributors" }]
+keywords = ["knowledge-graph", "claude-code", "ast", "code-intelligence"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development",
+]
+dependencies = [
+    "networkx>=3.0",
+]
+
+[project.optional-dependencies]
+watch = ["watchdog>=3.0"]
+
+[project.scripts]
+pluto = "pluto.__main__:main"
+
+[project.urls]
+Homepage = "https://github.com/pluto-graph/pluto"
+Issues = "https://github.com/pluto-graph/pluto/issues"
+
+[tool.setuptools.packages.find]
+include = ["pluto*"]
+
+[tool.setuptools.package-data]
+pluto = ["skill.md"]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.5",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
