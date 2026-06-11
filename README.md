@@ -7,7 +7,7 @@ Build the graph once (AST + regex, zero tokens), query it forever with
 ## Install
 
 ```bash
-git clone https://github.com/pluto-graph/pluto
+git clone https://github.com/pluto_memory_agent/pluto
 cd pluto
 uv tool install .        # or: pipx install . / pip install -e .
 pluto --version          # pluto 0.1.0
